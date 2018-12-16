@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+
+apply plugin: 'kotlin'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    api 'io.reactivex.rxjava2:rxjava:2.1.2'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.0.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    api project(":common")
+}

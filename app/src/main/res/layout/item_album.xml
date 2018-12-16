@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.ovrbach.common.entities.AlbumSimplified" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:transitionName="album_cover"
+            android:id="@+id/item_album_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:imageUrl="@{item.firstImageUrl}"
+            app:layout_constraintBottom_toBottomOf="@id/item_album_bot_barrier"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_album_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{item.name}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_album_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Lost in Dream" />
+
+        <TextView
+            android:id="@+id/item_album_artists"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/artists(item.artistsNames)}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toEndOf="@+id/item_album_name"
+            app:layout_constraintStart_toStartOf="@+id/item_album_name"
+            app:layout_constraintTop_toBottomOf="@+id/item_album_name"
+            tools:text="by: The War On Drugs" />
+
+        <TextView
+            android:id="@+id/item_album_release"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/released(item.release_date)}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintBottom_toBottomOf="@+id/item_album_bot_barrier"
+            app:layout_constraintEnd_toEndOf="@+id/item_album_name"
+            app:layout_constraintStart_toStartOf="@+id/item_album_name"
+            app:layout_constraintTop_toBottomOf="@+id/item_album_artists"
+            tools:text="Released: 17. June 2018" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/item_album_bot_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="item_album_image,item_album_release"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
