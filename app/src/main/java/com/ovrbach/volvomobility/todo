@@ -1,7 +1,5 @@
-todo hide secret
-
 todo lazy loading (paging library) > use paging library https://developer.android.com/topic/libraries/architecture/paging/
 todo open spotify app > add spotify icon to right end
-todo base classes for fragment > all day same shit
-todo normal property names
+todo base classes for fragment 
+todo normal property names for entity classes
 todo shimmer layout > till loading finishes
