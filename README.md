@@ -20,3 +20,13 @@
 - architecture components (viewModel, liveData, databinding)
 - Rx-java, Rx-android, moshi converter, rxjava adapter
 - material components, contstraint layout
+
+
+### todo 
+- paging 
+- dagger
+- start search on button click
+
+
+### bugs
+- 2 requests on fragment creation
